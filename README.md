@@ -272,7 +272,7 @@ J2EE的整体整合解决方案和自动配置都在spring-boot-autoconfigure-1.
 
 ​		
 
-==Spring注解版（谷粒学院）==
+==Spring注解版==
 
 
 
