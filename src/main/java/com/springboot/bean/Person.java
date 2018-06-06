@@ -1,7 +1,9 @@
 package com.springboot.bean;
 
+import org.hibernate.validator.constraints.Email;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
 import java.util.List;
@@ -9,9 +11,13 @@ import java.util.Map;
 
 @Component
 @ConfigurationProperties(prefix = "person")
+@Validated
 public class Person {
 
     private String name;
+
+    @Email
+    private String email;
 
     private Integer age;
 
@@ -81,10 +87,19 @@ public class Person {
         this.lists = lists;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 ", age=" + age +
                 ", boss=" + boss +
                 ", birth=" + birth +

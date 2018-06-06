@@ -1,5 +1,6 @@
 package com.springboot.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -7,10 +8,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
+    @Value("user")
+    private String user;
+
+
     @ResponseBody
     @RequestMapping("/hello")
     public String hello(){
-        return "Hello World !";
+        return "Hello "+user;
     }
 
 }
